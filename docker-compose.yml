@@ -1,0 +1,11 @@
+services:
+  ssh-application:
+    image: ghcr.io/spitfire1970/ssh-application:latest
+    restart: unless-stopped
+    ports:
+      - "22:22"
+    volumes:
+      - ssh-host-key:/app/.ssh
+
+volumes:
+  ssh-host-key:
